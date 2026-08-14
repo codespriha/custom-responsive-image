@@ -1,0 +1,68 @@
+{
+  "name": "custom-responsive-image",
+  "version": "0.1.0",
+  "description": "Framework-agnostic responsive image component with strict aspect ratio, object-fit (contain/cover/adaptive), and automatic small-image (icon/illustration) handling.",
+  "homepage": "https://codespriha.github.io/custom-responsive-image/demo/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codespriha/custom-responsive-image.git"
+  },
+  "bugs": {
+    "url": "https://github.com/codespriha/custom-responsive-image/issues"
+  },
+  "type": "module",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "files": ["dist"],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "npm run build:esm && npm run build:cjs && npm run build:types",
+    "build:demo": "esbuild demo/main.js --bundle --format=esm --outfile=demo/dist/index.js && node scripts/bump-demo-version.mjs",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json && node scripts/package-cjs.mjs",
+    "build:types": "tsc -p tsconfig.types.json",
+    "test": "tsx --test test/*.test.ts",
+    "type-check": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src test scripts",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "image",
+    "custom",
+    "responsive",
+    "aspect-ratio",
+    "object-fit",
+    "contain",
+    "cover",
+    "icon",
+    "illustration",
+    "headless"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@types/jsdom": "^21.1.7",
+    "@types/node": "^22.10.2",
+    "esbuild": "^0.24.2",
+    "eslint": "^9.17.0",
+    "globals": "^15.14.0",
+    "jsdom": "^26.0.0",
+    "prettier": "^3.4.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.19.1"
+  }
+}
