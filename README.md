@@ -164,6 +164,10 @@ import { RESPONSIVE_IMAGE_CSS, injectResponsiveImageStyles } from 'custom-respon
 
 ## Demo
 
+Live demo: <https://codespriha.github.io/custom-responsive-image/demo/>
+
+Run it locally:
+
 ```bash
 npm run build && npm run build:demo
 npx serve .
