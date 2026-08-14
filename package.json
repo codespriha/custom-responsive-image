@@ -1,6 +1,6 @@
 {
   "name": "custom-responsive-image",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Framework-agnostic responsive image component with strict aspect ratio, object-fit (contain/cover/adaptive), and automatic small-image (icon/illustration) handling.",
   "homepage": "https://codespriha.github.io/custom-responsive-image/demo/",
   "repository": {
@@ -21,7 +21,9 @@
       "require": "./dist/cjs/index.js"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "sideEffects": false,
   "engines": {
     "node": ">=18"
